@@ -2,4 +2,6 @@
 测试和学习jenkins下的github功能
 
 2025 05 14
-实现一个c++ + Qt MVP+coordinate设计模式的登录界面demo
+1. 实现一个c++ + Qt MVP+coordinate设计模式的登录界面demo
+2. 使用Qt Msvc命令行windeployqt.exe Test_jenkins.exe进行打包
+3. 验证Jenkins是否已经能自动打包
