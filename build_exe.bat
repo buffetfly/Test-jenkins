@@ -1,20 +1,20 @@
-ï»¿@echo off
+@echo off
 setlocal enabledelayedexpansion
 
-REM === å‚æ•°è§£æï¼ˆä» Jenkins ä¼ å…¥ GIT_BRANCHï¼Œä¾‹å¦‚ origin/testï¼‰ ===
+REM === ²ÎÊı½âÎö£¨´Ó Jenkins ´«Èë GIT_BRANCH£¬ÀıÈç origin/test£© ===
 set FULL_BRANCH=%1
 for /f "tokens=2 delims=/" %%i in ("%FULL_BRANCH%") do (
     set BRANCH_NAME=%%i
 )
 
-REM å¦‚æœæœªä¼ å…¥å‚æ•°ï¼Œåˆ™å°è¯•ç”¨ git è·å–ï¼ˆæœ¬åœ°æ‰‹åŠ¨è¿è¡Œæ—¶ç”¨ï¼‰
+REM Èç¹ûÎ´´«Èë²ÎÊı£¬Ôò³¢ÊÔÓÃ git »ñÈ¡£¨±¾µØÊÖ¶¯ÔËĞĞÊ±ÓÃ£©
 if not defined BRANCH_NAME (
     for /f %%i in ('git rev-parse --abbrev-ref HEAD') do (
         set BRANCH_NAME=%%i
     )
 )
 
-REM === ç¼–è¯‘é…ç½® ===
+REM === ±àÒëÅäÖÃ ===
 set BUILD_MODE=Release
 set PLATFORM=x86
 set SLN_PATH=D:\project\Test-jenkins\Test_jenkins\Test_jenkins.sln
@@ -24,11 +24,29 @@ set PATH=%QTDIR%\bin;%PATH%
 set QT_BIN=%QTDIR%\bin
 echo  branch: %BRANCH_NAME%
 
-REM ===== è®¾ç½®è¾“å‡ºç›®å½•ï¼šå¦‚ main_Releaseã€test_Release =====
+REM ===== ÉèÖÃÊä³öÄ¿Â¼£ºÈç main_Release¡¢test_Release =====
 set OUTPUT_DIR=D:\project\Test-jenkins\Test_jenkins\%BRANCH_NAME%_Release
 set BUILD_DIR=%OUTPUT_DIR%
 
-REM ===== ç¼–è¯‘é¡¹ç›® =====
+:: ===============================
+:: 1. Éú³É version.h£¨±ØĞëÔÚ×îÇ°£©
+:: ===============================
+for /f %%i in ('git rev-list --count HEAD') do set BUILD_NUM=%%i
+for /f %%i in ('powershell -Command "Get-Date -Format yyyyMMddHHmm"') do set BUILD_TIME=%%i
+
+set VERSION_H=D:\project\Test-jenkins\Test_jenkins\Test_jenkins\version.h
+echo #define FILE_VER_MAJOR 1 > %VERSION_H%
+echo #define FILE_VER_MINOR 0 >> %VERSION_H%
+echo #define FILE_VER_PATCH %BUILD_NUM% >> %VERSION_H%
+echo #define BUILD_NUM %BUILD_TIME% >> %VERSION_H%
+echo #define FILE_VER_STR "1.0.%BUILD_NUM%.0" >> %VERSION_H%
+echo #define PRODUCT_VER_STR "1.0.%BUILD_NUM%-%BUILD_TIME%" >> %VERSION_H%
+echo #define FILE_DESC "Test_jenkins %BRANCH_NAME%Ö´ĞĞÎÄ¼ş" >> %VERSION_H%
+echo. >> %VERSION_H%
+
+echo  version.h success£¡
+
+REM ===== ±àÒëÏîÄ¿ =====
 echo Building [%BRANCH_NAME%]...
 call "D:\Program Files\Microsoft Visual Studio\2022\Community\VC\Auxiliary\Build\vcvars32.bat"
 msbuild "%SLN_PATH%" /p:Configuration=%BUILD_MODE%;Platform=%PLATFORM% /p:OutDir=%OUTPUT_DIR%\ /p:QtInstallDir=%QTDIR%
@@ -39,12 +57,12 @@ IF %ERRORLEVEL% NEQ 0 (
     exit /b %ERRORLEVEL%
 )
 
-REM ===== åˆ›å»ºè¾“å‡ºç›®å½•ï¼ˆå¦‚æœæ²¡æœ‰ï¼‰=====
+REM ===== ´´½¨Êä³öÄ¿Â¼£¨Èç¹ûÃ»ÓĞ£©=====
 if not exist "%OUTPUT_DIR%" (
     mkdir "%OUTPUT_DIR%"
 )
 
-REM ===== ä½¿ç”¨ windeployqt æ‹·è´ä¾èµ– =====
+REM ===== Ê¹ÓÃ windeployqt ¿½±´ÒÀÀµ =====
 echo Deploying Qt dependencies to %OUTPUT_DIR%...
 "%QT_BIN%\windeployqt.exe" "%BUILD_DIR%\%EXE_NAME%"
 

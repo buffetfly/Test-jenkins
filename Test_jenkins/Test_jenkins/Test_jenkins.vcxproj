@@ -125,6 +125,7 @@
     <ClInclude Include="Modules\Login\View\IPasswordLoginView.h" />
     <ClInclude Include="Modules\Login\View\IRegisterView.h" />
     <ClInclude Include="Modules\Login\View\IVerificationLoginView.h" />
+    <ClInclude Include="version.h" />
     <QtMoc Include="Tests\Login\LoginPresenterTest.h" />
     <ClInclude Include="Tests\Login\MockPasswordLoginView.h" />
     <ClInclude Include="Tests\Login\MockRegisterView.h" />
@@ -132,6 +133,9 @@
     <QtMoc Include="Modules\Login\View\QtVerificationLoginView.h" />
     <QtMoc Include="Modules\Login\View\QtRegisterView.h" />
     <QtMoc Include="Modules\Login\View\QtPasswordLoginView.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <ResourceCompile Include="version.rc" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Condition="Exists('$(QtMsBuild)\qt.targets')">
