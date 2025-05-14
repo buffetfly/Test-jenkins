@@ -50,3 +50,4 @@ echo Deploying Qt dependencies to %OUTPUT_DIR%...
 
 echo Build and deploy completed: %BUILD_DIR%
 pause >nul
+
