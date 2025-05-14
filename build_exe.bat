@@ -1,20 +1,20 @@
-@echo off
+ï»¿@echo off
 setlocal enabledelayedexpansion
 
-REM === ²ÎÊı½âÎö£¨´Ó Jenkins ´«Èë GIT_BRANCH£¬ÀıÈç origin/test£© ===
+REM === å‚æ•°è§£æï¼ˆä» Jenkins ä¼ å…¥ GIT_BRANCHï¼Œä¾‹å¦‚ origin/testï¼‰ ===
 set FULL_BRANCH=%1
 for /f "tokens=2 delims=/" %%i in ("%FULL_BRANCH%") do (
     set BRANCH_NAME=%%i
 )
 
-REM Èç¹ûÎ´´«Èë²ÎÊı£¬Ôò³¢ÊÔÓÃ git »ñÈ¡£¨±¾µØÊÖ¶¯ÔËĞĞÊ±ÓÃ£©
+REM å¦‚æœæœªä¼ å…¥å‚æ•°ï¼Œåˆ™å°è¯•ç”¨ git è·å–ï¼ˆæœ¬åœ°æ‰‹åŠ¨è¿è¡Œæ—¶ç”¨ï¼‰
 if not defined BRANCH_NAME (
     for /f %%i in ('git rev-parse --abbrev-ref HEAD') do (
         set BRANCH_NAME=%%i
     )
 )
 
-REM === ±àÒëÅäÖÃ ===
+REM === ç¼–è¯‘é…ç½® ===
 set BUILD_MODE=Release
 set PLATFORM=x86
 set EXE_NAME=Test_jenkins.exe
@@ -22,19 +22,19 @@ set PROJECT_ROOT=D:\project\Test-jenkins\Test_jenkins
 set SLN_PATH=%PROJECT_ROOT%\Test_jenkins.sln
 set BUILD_DIR=%PROJECT_ROOT%\%BRANCH_NAME%_Release
 
-REM === ÉèÖÃ Qt »·¾³±äÁ¿ ===
+REM === è®¾ç½® Qt ç¯å¢ƒå˜é‡ ===
 set QTDIR=D:\Qt\5.15.2\msvc2019
 set PATH=%QTDIR%\bin;%PATH%
 
 echo  branch: %BRANCH_NAME%
 echo  output: %BUILD_DIR%
 
-REM === ¹¹½¨ÏîÄ¿ ===
+REM === æ„å»ºé¡¹ç›® ===
 call "C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Auxiliary\Build\vcvars32.bat"
 msbuild "%SLN_PATH%" /p:Configuration=%BUILD_MODE%;Platform=%PLATFORM%;QtInstallDir=%QTDIR%
 
-REM === ¿½±´ Qt ÒÀÀµ ===
+REM === æ‹·è´ Qt ä¾èµ– ===
 %QTDIR%\bin\windeployqt.exe "%BUILD_DIR%\%EXE_NAME%"
 
-echo  "end"¡£
+echo  "end"ã€‚
 pause
