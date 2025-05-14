@@ -5,6 +5,8 @@ set BUILD_MODE=Release
 set PLATFORM=x86
 set SLN_PATH=D:\project\Test-jenkins\Test_jenkins\Test_jenkins.sln
 set EXE_NAME=Test_jenkins.exe
+set QTDIR=D:\Qt\5.15.2\msvc2019
+set PATH=%QTDIR%\bin;%PATH%
 
 REM ===== 获取当前 Git 分支名 =====
 for /f "delims=" %%i in ('git rev-parse --abbrev-ref HEAD') do set BRANCH_NAME=%%i
@@ -14,7 +16,7 @@ set OUTPUT_DIR=D:\project\Test-jenkins\Test_jenkins\%BRANCH_NAME%_Release
 set BUILD_DIR=%OUTPUT_DIR%
 
 REM ===== Qt 安装路径 =====
-set QT_BIN=D:\Qt\5.15.2\msvc2019\bin
+set QT_BIN=%QTDIR%\bin
 
 REM ===== 编译项目 =====
 echo Building [%BRANCH_NAME%]...
