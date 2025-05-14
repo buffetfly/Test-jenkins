@@ -21,7 +21,7 @@ set QT_BIN=%QTDIR%\bin
 REM ===== ±‡“ÎœÓƒø =====
 echo Building [%BRANCH_NAME%]...
 call "D:\Program Files\Microsoft Visual Studio\2022\Community\VC\Auxiliary\Build\vcvars32.bat"
-msbuild "%SLN_PATH%" /p:Configuration=%BUILD_MODE%;Platform=%PLATFORM% /p:OutDir=%OUTPUT_DIR%\
+msbuild "%SLN_PATH%" /p:Configuration=%BUILD_MODE%;Platform=%PLATFORM% /p:OutDir=%OUTPUT_DIR%\ /p:QtInstallDir=%QTDIR%
 
 IF %ERRORLEVEL% NEQ 0 (
     echo Build failed, exiting...
