@@ -26,8 +26,8 @@ REM === 设置 Qt 环境变量 ===
 set QTDIR=D:\Qt\5.15.2\msvc2019
 set PATH=%QTDIR%\bin;%PATH%
 
-echo  分支: %BRANCH_NAME%
-echo  输出目录: %BUILD_DIR%
+echo  branch: %BRANCH_NAME%
+echo  output: %BUILD_DIR%
 
 REM === 构建项目 ===
 call "C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Auxiliary\Build\vcvars32.bat"
@@ -36,5 +36,5 @@ msbuild "%SLN_PATH%" /p:Configuration=%BUILD_MODE%;Platform=%PLATFORM%;QtInstall
 REM === 拷贝 Qt 依赖 ===
 %QTDIR%\bin\windeployqt.exe "%BUILD_DIR%\%EXE_NAME%"
 
-echo  构建完成。
+echo  "end"。
 pause
