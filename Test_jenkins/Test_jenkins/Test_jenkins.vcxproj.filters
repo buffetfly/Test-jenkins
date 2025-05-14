@@ -21,28 +21,138 @@
       <UniqueIdentifier>{639EADAA-A684-42e4-A9AD-28FC9BCB8F7C}</UniqueIdentifier>
       <Extensions>ts</Extensions>
     </Filter>
+    <Filter Include="Modules">
+      <UniqueIdentifier>{a508b7ea-1f7d-4202-a501-460db31413d9}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Tests">
+      <UniqueIdentifier>{0f8a0b7c-ae9d-40e4-a8d5-700fd399f969}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Modules\Login">
+      <UniqueIdentifier>{493bc195-43c6-4698-9b58-a741ebb9e778}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Modules\Login\Coordinator">
+      <UniqueIdentifier>{4cfa5f39-511c-4a17-9bae-3f8a382757f4}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Modules\Login\Model">
+      <UniqueIdentifier>{5a9f4212-da81-4be4-83b4-ae5fe8dfc314}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Modules\Login\Presenter">
+      <UniqueIdentifier>{7777139f-b5b3-4132-8f11-5189a9f7041c}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Modules\Login\View">
+      <UniqueIdentifier>{c61f6ce1-bede-4e3f-b5c4-46f65a336147}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Tests\Login">
+      <UniqueIdentifier>{0004b8ec-5477-476c-a2b2-21f3b6017860}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <QtRcc Include="Test_jenkins.qrc">
       <Filter>Resource Files</Filter>
     </QtRcc>
-    <QtUic Include="Test_jenkins.ui">
-      <Filter>Form Files</Filter>
-    </QtUic>
     <QtMoc Include="Test_jenkins.h">
       <Filter>Header Files</Filter>
     </QtMoc>
     <ClCompile Include="Test_jenkins.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ResourceCompile Include="$pro_name$.rc">
-    </ResourceCompile>
-    <None Include="$pro_name$.ico">
-      <Filter>Resource Files</Filter>
-    </None>
-    <None Include="$pro_name$.def">
-      <Filter>Resource Files</Filter>
-    </None>
-
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="main.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Modules\Login\Coordinator\LoginCoordinator.cpp">
+      <Filter>Modules\Login\Coordinator</Filter>
+    </ClCompile>
+    <ClCompile Include="Modules\Login\Model\UserModel.cpp">
+      <Filter>Modules\Login\Model</Filter>
+    </ClCompile>
+    <ClCompile Include="Modules\Login\Presenter\LoginPresenter.cpp">
+      <Filter>Modules\Login\Presenter</Filter>
+    </ClCompile>
+    <ClCompile Include="Tests\Login\MockPasswordLoginView.cpp">
+      <Filter>Tests\Login</Filter>
+    </ClCompile>
+    <ClCompile Include="Tests\Login\MockRegisterView.cpp">
+      <Filter>Tests\Login</Filter>
+    </ClCompile>
+    <ClCompile Include="Tests\Login\MockVerificationLoginView.cpp">
+      <Filter>Tests\Login</Filter>
+    </ClCompile>
+    <ClCompile Include="Modules\Login\View\QtPasswordLoginView.cpp">
+      <Filter>Modules\Login\View</Filter>
+    </ClCompile>
+    <ClCompile Include="Modules\Login\View\QtRegisterView.cpp">
+      <Filter>Modules\Login\View</Filter>
+    </ClCompile>
+    <ClCompile Include="Modules\Login\View\QtVerificationLoginView.cpp">
+      <Filter>Modules\Login\View</Filter>
+    </ClCompile>
+    <ClCompile Include="Tests\Login\LoginPresenterTest.cpp">
+      <Filter>Tests\Login</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="Modules\Login\Coordinator\LoginCoordinator.h">
+      <Filter>Modules\Login\Coordinator</Filter>
+    </ClInclude>
+    <ClInclude Include="Modules\Login\Model\UserModel.h">
+      <Filter>Modules\Login\Model</Filter>
+    </ClInclude>
+    <ClInclude Include="Modules\Login\Presenter\LoginPresenter.h">
+      <Filter>Modules\Login\Presenter</Filter>
+    </ClInclude>
+    <ClInclude Include="Modules\Login\View\ILoginView.h">
+      <Filter>Modules\Login\View</Filter>
+    </ClInclude>
+    <ClInclude Include="Modules\Login\View\IPasswordLoginView.h">
+      <Filter>Modules\Login\View</Filter>
+    </ClInclude>
+    <ClInclude Include="Modules\Login\View\IRegisterView.h">
+      <Filter>Modules\Login\View</Filter>
+    </ClInclude>
+    <ClInclude Include="Modules\Login\View\IVerificationLoginView.h">
+      <Filter>Modules\Login\View</Filter>
+    </ClInclude>
+    <ClInclude Include="Tests\Login\MockPasswordLoginView.h">
+      <Filter>Tests\Login</Filter>
+    </ClInclude>
+    <ClInclude Include="Tests\Login\MockRegisterView.h">
+      <Filter>Tests\Login</Filter>
+    </ClInclude>
+    <ClInclude Include="Tests\Login\MockVerificationLoginView.h">
+      <Filter>Tests\Login</Filter>
+    </ClInclude>
+    <ClInclude Include="GlobalEncoding.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <QtMoc Include="Modules\Login\View\QtPasswordLoginView.h">
+      <Filter>Modules\Login\View</Filter>
+    </QtMoc>
+    <QtMoc Include="Modules\Login\View\QtRegisterView.h">
+      <Filter>Modules\Login\View</Filter>
+    </QtMoc>
+    <QtMoc Include="Modules\Login\View\QtVerificationLoginView.h">
+      <Filter>Modules\Login\View</Filter>
+    </QtMoc>
+    <QtMoc Include="Tests\Login\LoginPresenterTest.h">
+      <Filter>Tests\Login</Filter>
+    </QtMoc>
+  </ItemGroup>
+  <ItemGroup>
+    <QtUic Include="Modules\Login\View\QtPasswordLoginView.ui">
+      <Filter>Modules\Login\View</Filter>
+    </QtUic>
+    <QtUic Include="Modules\Login\View\QtRegisterView.ui">
+      <Filter>Modules\Login\View</Filter>
+    </QtUic>
+    <QtUic Include="Modules\Login\View\QtVerificationLoginView.ui">
+      <Filter>Modules\Login\View</Filter>
+    </QtUic>
+    <QtUic Include="Test_jenkins.ui">
+      <Filter>Form Files</Filter>
+    </QtUic>
   </ItemGroup>
 </Project>

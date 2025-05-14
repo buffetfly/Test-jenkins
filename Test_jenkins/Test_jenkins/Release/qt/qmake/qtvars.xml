@@ -1,11 +1,11 @@
 <Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <PropertyGroup>
-<Qt_DEFINES_>_WINDOWS;UNICODE;_UNICODE;WIN32;_ENABLE_EXTENDED_ALIGNED_STORAGE;NDEBUG;QT_NO_DEBUG;QT_WIDGETS_LIB;QT_GUI_LIB;QT_CORE_LIB</Qt_DEFINES_>
-<Qt_INCLUDEPATH_>D:\Qt\5.15.2\msvc2019\include;D:\Qt\5.15.2\msvc2019\include\QtWidgets;D:\Qt\5.15.2\msvc2019\include\QtGui;D:\Qt\5.15.2\msvc2019\include\QtANGLE;D:\Qt\5.15.2\msvc2019\include\QtCore;D:\Qt\5.15.2\msvc2019\mkspecs\win32-msvc</Qt_INCLUDEPATH_>
+<Qt_DEFINES_>_CONSOLE;UNICODE;_UNICODE;WIN32;_ENABLE_EXTENDED_ALIGNED_STORAGE;NDEBUG;QT_NO_DEBUG;QT_WIDGETS_LIB;QT_GUI_LIB;QT_TESTLIB_LIB;QT_CORE_LIB;QT_TESTCASE_BUILDDIR="D:/project/Test-jenkins/Test_jenkins/Test_jenkins/Release/qt/qmake"</Qt_DEFINES_>
+<Qt_INCLUDEPATH_>D:\Qt\5.15.2\msvc2019\include;D:\Qt\5.15.2\msvc2019\include\QtWidgets;D:\Qt\5.15.2\msvc2019\include\QtGui;D:\Qt\5.15.2\msvc2019\include\QtANGLE;D:\Qt\5.15.2\msvc2019\include\QtTest;D:\Qt\5.15.2\msvc2019\include\QtCore;D:\Qt\5.15.2\msvc2019\mkspecs\win32-msvc</Qt_INCLUDEPATH_>
 <Qt_STDCPP_></Qt_STDCPP_>
 <Qt_RUNTIME_>MultiThreadedDLL</Qt_RUNTIME_>
 <Qt_CL_OPTIONS_>-Zc:rvalueCast -Zc:inline -Zc:strictStrings -Zc:throwingNew -Zc:referenceBinding -Zc:__cplusplus</Qt_CL_OPTIONS_>
-<Qt_LIBS_>D:\Qt\5.15.2\msvc2019\lib\Qt5Widgets.lib;D:\Qt\5.15.2\msvc2019\lib\Qt5Gui.lib;D:\Qt\5.15.2\msvc2019\lib\Qt5Core.lib;D:\Qt\5.15.2\msvc2019\lib\qtmain.lib;shell32.lib</Qt_LIBS_>
+<Qt_LIBS_>D:\Qt\5.15.2\msvc2019\lib\Qt5Widgets.lib;D:\Qt\5.15.2\msvc2019\lib\Qt5Gui.lib;D:\Qt\5.15.2\msvc2019\lib\Qt5Test.lib;D:\Qt\5.15.2\msvc2019\lib\Qt5Core.lib</Qt_LIBS_>
 <Qt_LINK_OPTIONS_>"/MANIFESTDEPENDENCY:type='win32' name='Microsoft.Windows.Common-Controls' version='6.0.0.0' publicKeyToken='6595b64144ccf1df' language='*' processorArchitecture='*'"</Qt_LINK_OPTIONS_>
 <QMake_QT_SYSROOT_></QMake_QT_SYSROOT_>
 <QMake_QT_INSTALL_PREFIX_>D:/Qt/5.15.2/msvc2019</QMake_QT_INSTALL_PREFIX_>
@@ -32,7 +32,7 @@
 <QMake_QMAKE_XSPEC_>win32-msvc</QMake_QMAKE_XSPEC_>
 <QMake_QMAKE_VERSION_>3.1</QMake_QMAKE_VERSION_>
 <QMake_QT_VERSION_>5.15.2</QMake_QT_VERSION_>
-<QtBkup_QtHash>jZExTgQxDEWv4hsM0FFs4bVNMGSSyHZAK7Ti/rcgMxo0Eg0p3MT/f/s5X8pSQuN2Wf2Dnh4en4GqCaSu8KmcJByuWvZiedEiflma1TehWDRk3R81tJZktbeFMtW1aZahkiEkca92qhy0UO4sDeN1NgqZ9xGYDzOrjQWqqTh4MLU2G5WxpI5JPLAwGoP1wb/KrP+QZ70a2g0of9e20U+f5WQ5jDCy/nEP7PflNI7jSRn/Rhv+1pvb4U/K73iTLOhy/wE=</QtBkup_QtHash>
+<QtBkup_QtHash>jZExTgQxDEWv4hsM0FFskbVNMGSSyHZAK7Ti/rfAMxo0Eg0p0iT/ffv/fAlxdfHbZbUPfHp4fAZsypCHgLN5kSt8CmV2g6vU/RC/SGW7LF3bG6Mv4rzul+LSatY2+oIF29qlcKg4hMhmTU+VgVQsg7gnf521SkT7iFQOmERjgabCBuaEvc9alVTzSDkipkpJCXREDyvP8oc8+tGkN8Dy3fqWfrqWM8sBQnj9Q0fs9+UEozyu8X+4xd/e5nb44/I7XrlwMr7/AA==</QtBkup_QtHash>
     <QtVersion>5.15.2</QtVersion>
     <QtVersionMajor>5</QtVersionMajor>
     <QtVersionMinor>15</QtVersionMinor>

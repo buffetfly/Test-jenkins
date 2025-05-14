@@ -1,4 +1,5 @@
 <RCC>
-    <qresource prefix="Test_jenkins">
+    <qresource prefix="/">
+        <file>qrc/pic.png</file>
     </qresource>
 </RCC>

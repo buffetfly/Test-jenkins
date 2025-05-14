@@ -1,2 +1,12 @@
 CONFIG += no_fixpath
-QT = core gui widgets
+QT = core gui testlib widgets
+CONFIG += no_fixpath
+QT = core gui testlib widgets
+CONFIG += no_fixpath
+QT = core gui testlib widgets
+CONFIG += no_fixpath
+QT = core gui testlib widgets
+CONFIG += no_fixpath
+QT = core gui testlib widgets
+CONFIG += no_fixpath
+QT = core gui testlib widgets
