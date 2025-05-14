@@ -49,4 +49,4 @@ echo Deploying Qt dependencies to %OUTPUT_DIR%...
 "%QT_BIN%\windeployqt.exe" "%BUILD_DIR%\%EXE_NAME%"
 
 echo Build and deploy completed: %BUILD_DIR%
-pause
+pause >nul
