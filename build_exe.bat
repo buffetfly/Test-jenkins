@@ -1,5 +1,11 @@
 @echo off
 
+REM === 提取传入的 Git 分支参数（例如 origin/test） ===
+set FULL_BRANCH=%1
+for /f "tokens=2 delims=/" %%i in ("%FULL_BRANCH%") do (
+    set BRANCH_NAME=%%i
+)
+
 REM ===== 设置基础路径 =====
 set BUILD_MODE=Release
 set PLATFORM=x86
