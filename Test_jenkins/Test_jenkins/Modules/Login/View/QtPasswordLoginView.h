@@ -1,6 +1,6 @@
 #pragma once
 
-#include "IPasswordLoginView.h"
+#include "Login\View\IPasswordLoginView.h"
 #include <QWidget>
 
 namespace Ui {

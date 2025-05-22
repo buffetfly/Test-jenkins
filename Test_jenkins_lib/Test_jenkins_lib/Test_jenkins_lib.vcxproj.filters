@@ -1,0 +1,80 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="Source Files">
+      <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
+      <Extensions>qml;cpp;c;cc;cxx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
+    </Filter>
+    <Filter Include="Header Files">
+      <UniqueIdentifier>{93995380-89BD-4b04-88EB-625FBE52EBFB}</UniqueIdentifier>
+      <Extensions>h;hh;hpp;hxx;hm;inl;inc;xsd</Extensions>
+    </Filter>
+    <Filter Include="Resource Files">
+      <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
+      <Extensions>qrc;rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
+    </Filter>
+    <Filter Include="Form Files">
+      <UniqueIdentifier>{99349809-55BA-4b9d-BF79-8FDBB0286EB3}</UniqueIdentifier>
+      <Extensions>ui</Extensions>
+    </Filter>
+    <Filter Include="Translation Files">
+      <UniqueIdentifier>{639EADAA-A684-42e4-A9AD-28FC9BCB8F7C}</UniqueIdentifier>
+      <Extensions>ts</Extensions>
+    </Filter>
+    <Filter Include="Modules">
+      <UniqueIdentifier>{2d172705-1d72-4403-ab78-8ee772e1fa28}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Modules\Login">
+      <UniqueIdentifier>{8a6d4c10-2c75-4e63-bffa-82decea0ce3a}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Modules\Login\Coordinator">
+      <UniqueIdentifier>{79d33730-3e47-4795-9711-7db16900c7bb}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Modules\Login\Model">
+      <UniqueIdentifier>{872fb9ec-d5ab-4ec5-a6f0-6100708bf1bb}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Modules\Login\Presenter">
+      <UniqueIdentifier>{cab57ae2-9004-4318-9a2b-134ca0ddd7cf}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Modules\Login\View">
+      <UniqueIdentifier>{0b66b380-94d1-4f92-aca7-6889fb6a866c}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="test_jenkins_lib_global.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Modules\Login\Coordinator\LoginCoordinator.h">
+      <Filter>Modules\Login\Coordinator</Filter>
+    </ClInclude>
+    <ClInclude Include="Modules\Login\Model\UserModel.h">
+      <Filter>Modules\Login\Model</Filter>
+    </ClInclude>
+    <ClInclude Include="Modules\Login\View\ILoginView.h">
+      <Filter>Modules\Login\View</Filter>
+    </ClInclude>
+    <ClInclude Include="Modules\Login\View\IPasswordLoginView.h">
+      <Filter>Modules\Login\View</Filter>
+    </ClInclude>
+    <ClInclude Include="Modules\Login\View\IRegisterView.h">
+      <Filter>Modules\Login\View</Filter>
+    </ClInclude>
+    <ClInclude Include="Modules\Login\View\IVerificationLoginView.h">
+      <Filter>Modules\Login\View</Filter>
+    </ClInclude>
+    <ClInclude Include="Modules\Login\Presenter\LoginPresenter.h">
+      <Filter>Modules\Login\Presenter</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="Modules\Login\Coordinator\LoginCoordinator.cpp">
+      <Filter>Modules\Login\Coordinator</Filter>
+    </ClCompile>
+    <ClCompile Include="Modules\Login\Model\UserModel.cpp">
+      <Filter>Modules\Login\Model</Filter>
+    </ClCompile>
+    <ClCompile Include="Modules\Login\Presenter\LoginPresenter.cpp">
+      <Filter>Modules\Login\Presenter</Filter>
+    </ClCompile>
+  </ItemGroup>
+</Project>

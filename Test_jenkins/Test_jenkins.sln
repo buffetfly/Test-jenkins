@@ -1,9 +1,13 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
-VisualStudioVersion = 17.12.35527.113 d17.12
+VisualStudioVersion = 17.12.35527.113
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Test_jenkins", "Test_jenkins\Test_jenkins.vcxproj", "{25465D44-E943-422E-919A-D044129EA556}"
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Test_jenkins_lib", "..\Test_jenkins_lib\Test_jenkins_lib\Test_jenkins_lib.vcxproj", "{7B8055C0-F241-4492-B814-511475FC8E1E}"
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Test_jenkins_test", "..\Test_jenkins_test\Test_jenkins_test\Test_jenkins_test.vcxproj", "{77E1B4EE-8AAB-4A8B-86B4-5DA61AFBAE34}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -15,6 +19,14 @@ Global
 		{25465D44-E943-422E-919A-D044129EA556}.Debug|x86.Build.0 = Debug|Win32
 		{25465D44-E943-422E-919A-D044129EA556}.Release|x86.ActiveCfg = Release|Win32
 		{25465D44-E943-422E-919A-D044129EA556}.Release|x86.Build.0 = Release|Win32
+		{7B8055C0-F241-4492-B814-511475FC8E1E}.Debug|x86.ActiveCfg = Debug|Win32
+		{7B8055C0-F241-4492-B814-511475FC8E1E}.Debug|x86.Build.0 = Debug|Win32
+		{7B8055C0-F241-4492-B814-511475FC8E1E}.Release|x86.ActiveCfg = Release|Win32
+		{7B8055C0-F241-4492-B814-511475FC8E1E}.Release|x86.Build.0 = Release|Win32
+		{77E1B4EE-8AAB-4A8B-86B4-5DA61AFBAE34}.Debug|x86.ActiveCfg = Debug|Win32
+		{77E1B4EE-8AAB-4A8B-86B4-5DA61AFBAE34}.Debug|x86.Build.0 = Debug|Win32
+		{77E1B4EE-8AAB-4A8B-86B4-5DA61AFBAE34}.Release|x86.ActiveCfg = Release|Win32
+		{77E1B4EE-8AAB-4A8B-86B4-5DA61AFBAE34}.Release|x86.Build.0 = Release|Win32
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

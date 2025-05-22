@@ -42,7 +42,7 @@
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|Win32'" Label="QtSettings">
     <QtInstall>msvc2019</QtInstall>
-    <QtModules>core;gui;testlib;widgets</QtModules>
+    <QtModules>core;gui;widgets</QtModules>
     <QtBuildConfig>release</QtBuildConfig>
   </PropertyGroup>
   <Target Name="QtMsBuildNotFound" BeforeTargets="CustomBuild;ClCompile" Condition="!Exists('$(QtMsBuild)\qt.targets') or !Exists('$(QtMsBuild)\qt.props')">
@@ -66,7 +66,12 @@
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
     <ClCompile>
       <Optimization>Disabled</Optimization>
+      <AdditionalModuleDependencies>%(AdditionalModuleDependencies)</AdditionalModuleDependencies>
+      <AdditionalIncludeDirectories>..\..\Test_jenkins_lib\Test_jenkins_lib\Modules;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ClCompile>
+    <Link>
+      <AdditionalDependencies>..\Release\Test_jenkins_lib.lib;%(AdditionalDependencies)</AdditionalDependencies>
+    </Link>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|Win32'" Label="Configuration">
     <ClCompile>
@@ -101,35 +106,13 @@
     <QtUic Include="Modules\Login\View\QtPasswordLoginView.ui" />
     <QtUic Include="Modules\Login\View\QtRegisterView.ui" />
     <QtUic Include="Modules\Login\View\QtVerificationLoginView.ui" />
-    <QtMoc Include="Test_jenkins.h" />
-    <ClCompile Include="Modules\Login\Coordinator\LoginCoordinator.cpp" />
-    <ClCompile Include="Modules\Login\Model\UserModel.cpp" />
-    <ClCompile Include="Modules\Login\Presenter\LoginPresenter.cpp" />
     <ClCompile Include="Modules\Login\View\QtPasswordLoginView.cpp" />
     <ClCompile Include="Modules\Login\View\QtRegisterView.cpp" />
     <ClCompile Include="Modules\Login\View\QtVerificationLoginView.cpp" />
-    <ClCompile Include="Tests\Login\LoginPresenterTest.cpp" />
-    <ClCompile Include="Tests\Login\MockPasswordLoginView.cpp" />
-    <ClCompile Include="Tests\Login\MockRegisterView.cpp" />
-    <ClCompile Include="Tests\Login\MockVerificationLoginView.cpp" />
-    <ClCompile Include="Test_jenkins.cpp" />
     <ClCompile Include="main.cpp" />
-    <QtUic Include="Test_jenkins.ui" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="GlobalEncoding.h" />
-    <ClInclude Include="Modules\Login\Coordinator\LoginCoordinator.h" />
-    <ClInclude Include="Modules\Login\Model\UserModel.h" />
-    <ClInclude Include="Modules\Login\Presenter\LoginPresenter.h" />
-    <ClInclude Include="Modules\Login\View\ILoginView.h" />
-    <ClInclude Include="Modules\Login\View\IPasswordLoginView.h" />
-    <ClInclude Include="Modules\Login\View\IRegisterView.h" />
-    <ClInclude Include="Modules\Login\View\IVerificationLoginView.h" />
     <ClInclude Include="version.h" />
-    <QtMoc Include="Tests\Login\LoginPresenterTest.h" />
-    <ClInclude Include="Tests\Login\MockPasswordLoginView.h" />
-    <ClInclude Include="Tests\Login\MockRegisterView.h" />
-    <ClInclude Include="Tests\Login\MockVerificationLoginView.h" />
     <QtMoc Include="Modules\Login\View\QtVerificationLoginView.h" />
     <QtMoc Include="Modules\Login\View\QtRegisterView.h" />
     <QtMoc Include="Modules\Login\View\QtPasswordLoginView.h" />

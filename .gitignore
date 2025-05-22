@@ -1,1 +1,5 @@
 .vs/
+test_Release/
+**/Release/
+!Test_jenkins/Release/
+!Test_jenkins/Release/**

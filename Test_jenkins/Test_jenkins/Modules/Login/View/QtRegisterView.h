@@ -1,6 +1,6 @@
 #pragma once
 
-#include "IRegisterView.h"
+#include "Login\View\IRegisterView.h"
 #include <QWidget>
 
 namespace Ui {
