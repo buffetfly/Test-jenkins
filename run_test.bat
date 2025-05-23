@@ -27,3 +27,4 @@ copy /Y "D:\project\Test-jenkins\Test_jenkins\test_static_Release\test_result.xm
 echo  Tests passed.
 pause >nul
 exit /b 0
+
