@@ -90,4 +90,3 @@ if not exist "%ZIP_DIR%" (
 powershell -Command "Compress-Archive -Path '%BUILD_DIR%\*' -DestinationPath '%ZIP_DIR%\%EXE_NO%-%BUILD_NUM%-%BUILD_TIME%' -Force | Out-Null"
 
 pause >nul
-
