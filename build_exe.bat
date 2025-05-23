@@ -1,4 +1,4 @@
-﻿@echo off
+@echo off
 setlocal enabledelayedexpansion
 
 REM === 参数解析（从 Jenkins 传入 GIT_BRANCH，例如 origin/test） ===

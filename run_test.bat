@@ -1,4 +1,4 @@
-﻿@echo off
+@echo off
 echo Running unit tests...
 setlocal enabledelayedexpansion
 REM === 参数解析（从 Jenkins 传入 GIT_BRANCH，例如 origin/test） ===
@@ -27,5 +27,4 @@ copy /Y "D:\project\Test-jenkins\Test_jenkins\test_static_Release\test_result.xm
 echo  Tests passed.
 pause >nul
 exit /b 0
-
 
