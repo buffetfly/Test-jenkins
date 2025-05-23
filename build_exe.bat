@@ -1,20 +1,20 @@
-@echo off
+ï»¿@echo off
 setlocal enabledelayedexpansion
 
-REM === ²ÎÊý½âÎö£¨´Ó Jenkins ´«Èë GIT_BRANCH£¬ÀýÈç origin/test£© ===
+REM === å‚æ•°è§£æžï¼ˆä»Ž Jenkins ä¼ å…¥ GIT_BRANCHï¼Œä¾‹å¦‚ origin/testï¼‰ ===
 set FULL_BRANCH=%1
 for /f "tokens=2 delims=/" %%i in ("%FULL_BRANCH%") do (
     set BRANCH_NAME=%%i
 )
 
-REM Èç¹ûÎ´´«Èë²ÎÊý£¬Ôò³¢ÊÔÓÃ git »ñÈ¡£¨±¾µØÊÖ¶¯ÔËÐÐÊ±ÓÃ£©
+REM å¦‚æžœæœªä¼ å…¥å‚æ•°ï¼Œåˆ™å°è¯•ç”¨ git èŽ·å–ï¼ˆæœ¬åœ°æ‰‹åŠ¨è¿è¡Œæ—¶ç”¨ï¼‰
 if not defined BRANCH_NAME (
     for /f %%i in ('git rev-parse --abbrev-ref HEAD') do (
         set BRANCH_NAME=%%i
     )
 )
 
-REM === ±àÒëÅäÖÃ ===
+REM === ç¼–è¯‘é…ç½® ===
 set BUILD_MODE=Release
 set PLATFORM=x86
 set SLN_PATH=D:\project\Test-jenkins\Test_jenkins\Test_jenkins.sln
@@ -27,17 +27,17 @@ set PATH=%QTDIR%\bin;%PATH%
 set QT_BIN=%QTDIR%\bin
 echo  branch: %BRANCH_NAME%
 
-REM ===== ÉèÖÃÊä³öÄ¿Â¼£ºÈç main_Release¡¢test_Release =====
+REM ===== è®¾ç½®è¾“å‡ºç›®å½•ï¼šå¦‚ main_Releaseã€test_Release =====
 set OUTPUT_DIR=D:\project\Test-jenkins\Test_jenkins\%BRANCH_NAME%_Release
 set BUILD_DIR=%OUTPUT_DIR%
 set ZIP_DIR=D:\project\Test-jenkins\Test_jenkins\%BRANCH_NAME%_Release_back
 
 :: ===============================
-:: 1. Éú³É version.h£¨±ØÐëÔÚ×îÇ°£©
+:: 1. ç”Ÿæˆ version.hï¼ˆå¿…é¡»åœ¨æœ€å‰ï¼‰
 :: ===============================
 for /f %%i in ('git rev-list --count HEAD') do set BUILD_NUM=%%i
 
-:: Èç¹û Jenkins Ìá¹©»·¾³±äÁ¿£¬ÓÅÏÈÊ¹ÓÃ
+:: å¦‚æžœ Jenkins æä¾›çŽ¯å¢ƒå˜é‡ï¼Œä¼˜å…ˆä½¿ç”¨
 IF DEFINED GIT_COMMIT (
     set BUILD_TIME=%GIT_COMMIT%
 ) ELSE (
@@ -51,12 +51,12 @@ echo #define FILE_VER_PATCH %BUILD_NUM% >> %VERSION_H%
 echo #define BUILD_NUM %BUILD_TIME% >> %VERSION_H%
 echo #define FILE_VER_STR "%BUILD_NUM%" >> %VERSION_H%
 echo #define PRODUCT_VER_STR "%BUILD_NUM%-%BUILD_TIME%" >> %VERSION_H%
-echo #define FILE_DESC "Test_jenkins %BRANCH_NAME%Ö´ÐÐÎÄ¼þ" >> %VERSION_H%
+echo #define FILE_DESC "Test_jenkins %BRANCH_NAME%æ‰§è¡Œæ–‡ä»¶" >> %VERSION_H%
 echo. >> %VERSION_H%
 
-echo  version.h success£¡
+echo  version.h successï¼
 
-REM ===== ±àÒëÏîÄ¿ =====
+REM ===== ç¼–è¯‘é¡¹ç›® =====
 echo Building EXE [%BRANCH_NAME%]... ================================================================================
 call "D:\Program Files\Microsoft Visual Studio\2022\Community\VC\Auxiliary\Build\vcvars32.bat"
 msbuild "%SLN_PATH%" /p:Configuration=%BUILD_MODE%;Platform=%PLATFORM% /p:OutDir=%OUTPUT_DIR%\ /p:QtInstallDir=%QTDIR%
@@ -67,22 +67,22 @@ IF %ERRORLEVEL% NEQ 0 (
     exit /b %ERRORLEVEL%
 )
 
-REM ===== ±àÒëµ¥Ôª²âÊÔÏîÄ¿ =====
+REM ===== ç¼–è¯‘å•å…ƒæµ‹è¯•é¡¹ç›® =====
 echo Building EXE_TEST [%BRANCH_NAME%]... ================================================================================
 msbuild "%SLN_TEST_PATH%" /p:Configuration=%BUILD_MODE%;Platform=%PLATFORM% /p:OutDir=%OUTPUT_DIR%\ /p:QtInstallDir=%QTDIR%
 
-REM ===== ´´½¨Êä³öÄ¿Â¼£¨Èç¹ûÃ»ÓÐ£©=====
+REM ===== åˆ›å»ºè¾“å‡ºç›®å½•ï¼ˆå¦‚æžœæ²¡æœ‰ï¼‰=====
 if not exist "%OUTPUT_DIR%" (
     mkdir "%OUTPUT_DIR%"
 )
 
-REM ===== Ê¹ÓÃ windeployqt ¿½±´ÒÀÀµ =====
+REM ===== ä½¿ç”¨ windeployqt æ‹·è´ä¾èµ– =====
 echo Deploying Qt dependencies to %OUTPUT_DIR%...
 "%QT_BIN%\windeployqt.exe" "%BUILD_DIR%\%EXE_NAME%" "%BUILD_DIR%\%EXE_TEST_NAME%"
 
 echo Build and deploy completed: %BUILD_DIR%
 
-echo ×¼±¸Ñ¹Ëõ£º%ZIP_DIR%
+echo å‡†å¤‡åŽ‹ç¼©ï¼š%ZIP_DIR%
 powershell -Command "Compress-Archive -Path '%BUILD_DIR%\*' -DestinationPath '%ZIP_DIR%\%EXE_NAME%-%BUILD_NUM%-%BUILD_TIME%'"
 
 pause >nul

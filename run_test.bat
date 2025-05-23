@@ -1,13 +1,13 @@
-@echo off
+ï»¿@echo off
 echo Running unit tests...
 setlocal enabledelayedexpansion
-REM === ²ÎÊı½âÎö£¨´Ó Jenkins ´«Èë GIT_BRANCH£¬ÀıÈç origin/test£© ===
+REM === å‚æ•°è§£æï¼ˆä» Jenkins ä¼ å…¥ GIT_BRANCHï¼Œä¾‹å¦‚ origin/testï¼‰ ===
 set FULL_BRANCH=%1
 for /f "tokens=2 delims=/" %%i in ("%FULL_BRANCH%") do (
     set BRANCH_NAME=%%i
 )
 
-REM Èç¹ûÎ´´«Èë²ÎÊı£¬Ôò³¢ÊÔÓÃ git »ñÈ¡£¨±¾µØÊÖ¶¯ÔËĞĞÊ±ÓÃ£©
+REM å¦‚æœæœªä¼ å…¥å‚æ•°ï¼Œåˆ™å°è¯•ç”¨ git è·å–ï¼ˆæœ¬åœ°æ‰‹åŠ¨è¿è¡Œæ—¶ç”¨ï¼‰
 if not defined BRANCH_NAME (
     for /f %%i in ('git rev-parse --abbrev-ref HEAD') do (
         set BRANCH_NAME=%%i
