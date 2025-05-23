@@ -23,7 +23,7 @@ IF %ERRORLEVEL% NEQ 0 (
     pause >nul
     exit /b 1
 )
-copy /Y "D:\project\Test-jenkins\Test_jenkins\test_static_Release\test_result.xml" "%CD%\test_result.xml"
+
 echo  Tests passed.
 pause >nul
 exit /b 0
