@@ -38,7 +38,7 @@ for /f %%i in ('git rev-list --count HEAD') do set BUILD_NUM=%%i
 
 :: 如果 Jenkins 提供环境变量，优先使用
 IF DEFINED GIT_COMMIT (
-    set BUILD_TIME=%GIT_COMMIT:~0,7%
+    set BUILD_TIME=%GIT_COMMIT
 ) ELSE (
     for /f %%i in ('powershell -Command "Get-Date -Format yyyyMMddHHmm"') do set BUILD_TIME=%%i
 )
