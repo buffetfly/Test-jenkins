@@ -47,7 +47,7 @@ set VERSION_H=D:\project\Test-jenkins\Test_jenkins\Test_jenkins\version.h
 echo #define FILE_VER_MAJOR 1 > %VERSION_H%
 echo #define FILE_VER_MINOR 0 >> %VERSION_H%
 echo #define FILE_VER_PATCH %BUILD_NUM% >> %VERSION_H%
-echo #define BUILD_NUM "%BUILD_TIME%" >> %VERSION_H%
+echo #define BUILD_NUM %BUILD_TIME% >> %VERSION_H%
 echo #define FILE_VER_STR "%BUILD_NUM%" >> %VERSION_H%
 echo #define PRODUCT_VER_STR "%BUILD_NUM%-%BUILD_TIME%" >> %VERSION_H%
 echo #define FILE_DESC "Test_jenkins %BRANCH_NAME%Ö´ÐÐÎÄ¼þ" >> %VERSION_H%
