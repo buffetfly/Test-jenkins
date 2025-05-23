@@ -14,16 +14,15 @@ if not defined BRANCH_NAME (
     )
 )
 
-set OUTPUT_DIR=D:\project\Test-jenkins\Test_jenkins\%BRANCH_NAME%_Release
+set OUTPUT_DIR=Test_jenkins\%BRANCH_NAME%_Release
 set BUILD_DIR=%OUTPUT_DIR%
 
-D:\project\Test-jenkins\Test_jenkins\test_static_Release\Test_jenkins_test.exe -xml -o %BUILD_DIR%/test_result.xml
+Test_jenkins\test_static_Release\Test_jenkins_test.exe -xml -o %BUILD_DIR%/test_result.xml
 IF %ERRORLEVEL% NEQ 0 (
     echo  Unit tests failed.
     pause >nul
     exit /b 1
 )
-copy /Y "D:\project\Test-jenkins\Test_jenkins\test_static_Release\test_result.xml" "%CD%\test_result.xml"
 echo  Tests passed.
 pause >nul
 exit /b 0

@@ -17,8 +17,8 @@ if not defined BRANCH_NAME (
 REM === 编译配置 ===
 set BUILD_MODE=Release
 set PLATFORM=x86
-set SLN_PATH=D:\project\Test-jenkins\Test_jenkins\Test_jenkins.sln
-set SLN_TEST_PATH=D:\project\Test-jenkins\Test_jenkins_test\Test_jenkins.sln
+set SLN_PATH=Test_jenkins\Test_jenkins.sln
+set SLN_TEST_PATH=Test_jenkins_test\Test_jenkins_test.sln
 set EXE_NAME=Test_jenkins.exe
 set EXE_NO=Test_jenkins
 set EXE_TEST_NAME=Test_jenkins_test.exe
@@ -29,7 +29,7 @@ set QT_BIN=%QTDIR%\bin
 echo  branch: %BRANCH_NAME%
 
 REM ===== 设置输出目录：如 main_Release、test_Release =====
-set OUTPUT_DIR=D:\project\Test-jenkins\Test_jenkins\%BRANCH_NAME%_Release
+set OUTPUT_DIR=Test_jenkins\%BRANCH_NAME%_Release
 set BUILD_DIR=%OUTPUT_DIR%
 set ZIP_DIR=%OUTPUT_DIR%_back
 
