@@ -29,7 +29,7 @@ set QT_BIN=%QTDIR%\bin
 echo  branch: %BRANCH_NAME%
 
 REM ===== 设置输出目录：如 main_Release、test_Release =====
-set OUTPUT_DIR=Test_jenkins\%BRANCH_NAME%_Release
+set OUTPUT_DIR=%CD%\%BRANCH_NAME%_Release
 set BUILD_DIR=%OUTPUT_DIR%
 set ZIP_DIR=%OUTPUT_DIR%_back
 
