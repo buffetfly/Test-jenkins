@@ -14,7 +14,7 @@ if not defined BRANCH_NAME (
     )
 )
 
-set OUTPUT_DIR=%CD%\%BRANCH_NAME%_Release
+set OUTPUT_DIR=%CD%\%BRANCH_NAME%\%BRANCH_NAME%_Release
 set BUILD_DIR=%OUTPUT_DIR%
 
 %BUILD_DIR%\Test_jenkins_test.exe -xml -o %CD%/test_result.xml
