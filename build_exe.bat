@@ -52,7 +52,7 @@ echo #define FILE_VER_PATCH %BUILD_NUM% >> %VERSION_H%
 echo #define BUILD_NUM %BUILD_TIME% >> %VERSION_H%
 echo #define FILE_VER_STR "%BUILD_NUM%" >> %VERSION_H%
 echo #define PRODUCT_VER_STR "%BUILD_NUM%-%BUILD_TIME%" >> %VERSION_H%
-echo #define FILE_DESC "Test_jenkins %BRANCH_NAME%执行文件" >> %VERSION_H%
+echo #define FILE_DESC "Test_jenkins %BRANCH_NAME%" >> %VERSION_H%
 echo. >> %VERSION_H%
 
 echo  version.h success！
@@ -84,7 +84,10 @@ echo Deploying Qt dependencies to %OUTPUT_DIR%...
 echo Build and deploy completed: %BUILD_DIR%
 
 echo 准备压缩: %ZIP_DIR%
-powershell -Command "Compress-Archive -Path '%BUILD_DIR%\*' -DestinationPath '%ZIP_DIR%\%EXE_NO%-%BUILD_NUM%-%BUILD_TIME%'"
+if not exist "%ZIP_DIR%" (
+    mkdir "%ZIP_DIR%"
+)
+powershell -Command "Compress-Archive -Path '%BUILD_DIR%\*' -DestinationPath '%ZIP_DIR%\%EXE_NO%-%BUILD_NUM%-%BUILD_TIME%' -Force | Out-Null"
 
 pause >nul
 
