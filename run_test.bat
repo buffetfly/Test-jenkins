@@ -14,7 +14,6 @@ if not defined BRANCH_NAME (
     )
 )
 
-
 set OUTPUT_DIR=D:\project\Test-jenkins\Test_jenkins\%BRANCH_NAME%_Release
 set BUILD_DIR=%OUTPUT_DIR%
 
