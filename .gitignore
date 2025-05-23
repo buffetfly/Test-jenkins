@@ -1,4 +1,5 @@
 .vs/
+Test-jenkins/Test_jenkins/version.h
 test_Release/
 **/Release/
 test_static_Release/
