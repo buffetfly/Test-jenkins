@@ -22,6 +22,7 @@ set SLN_TEST_PATH=D:\project\Test-jenkins\Test_jenkins_test\Test_jenkins.sln
 set EXE_NAME=Test_jenkins.exe
 set EXE_TEST_NAME=Test_jenkins_test.exe
 set QTDIR=D:\Qt\5.15.2\msvc2019
+set QtMsBuild=%QTDIR%\QtMSBuild
 set PATH=%QTDIR%\bin;%PATH%
 set QT_BIN=%QTDIR%\bin
 echo  branch: %BRANCH_NAME%
