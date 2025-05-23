@@ -20,6 +20,7 @@ set PLATFORM=x86
 set SLN_PATH=D:\project\Test-jenkins\Test_jenkins\Test_jenkins.sln
 set SLN_TEST_PATH=D:\project\Test-jenkins\Test_jenkins_test\Test_jenkins.sln
 set EXE_NAME=Test_jenkins.exe
+set EXE_NO=Test_jenkins
 set EXE_TEST_NAME=Test_jenkins_test.exe
 set QTDIR=D:\Qt\5.15.2\msvc2019
 set QtMsBuild=%QTDIR%\QtMSBuild
@@ -83,7 +84,7 @@ echo Deploying Qt dependencies to %OUTPUT_DIR%...
 echo Build and deploy completed: %BUILD_DIR%
 
 echo 准备压缩: %ZIP_DIR%
-powershell -Command "Compress-Archive -Path '%BUILD_DIR%\*' -DestinationPath '%ZIP_DIR%\%EXE_NAME%-%BUILD_NUM%-%BUILD_TIME%'"
+powershell -Command "Compress-Archive -Path '%BUILD_DIR%\*' -DestinationPath '%ZIP_DIR%\%EXE_NO%-%BUILD_NUM%-%BUILD_TIME%'"
 
 pause >nul
 
