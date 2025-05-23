@@ -26,4 +26,3 @@ IF %ERRORLEVEL% NEQ 0 (
 echo  Tests passed.
 pause >nul
 exit /b 0
-
