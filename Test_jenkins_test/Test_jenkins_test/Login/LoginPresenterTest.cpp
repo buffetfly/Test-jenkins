@@ -143,7 +143,7 @@ void LoginPresenterTest::testRegisterSuccess() {
     // 验证
     QStringList messages = m_mockRegisterView->getMessageHistory();
     QVERIFY(!messages.isEmpty());
-    QVERIFY(messages.last().contains(u8"注册成功"));
+    QVERIFY(messages.last().contains(u8"zhuce success"));
     
     // 验证用户是否真的被注册了
     QVERIFY(m_userModel->validateUser("new_user", "new_password"));
