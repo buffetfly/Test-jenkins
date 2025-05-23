@@ -18,7 +18,7 @@ set OUTPUT_DIR=%CD%\%BRANCH_NAME%_Release
 set BUILD_DIR=%OUTPUT_DIR%
 
 %BUILD_DIR%\Test_jenkins_test.exe -xml -o %CD%/test_result.xml
-copy "%CD%/test_result.xml" "%BUILD_DIR%/test_result.xml"
+copy "%CD%\test_result.xml"  "%BUILD_DIR%\test_result.xml"
 IF %ERRORLEVEL% NEQ 0 (
     echo  Unit tests failed.
     pause >nul
