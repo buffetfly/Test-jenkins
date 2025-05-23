@@ -30,6 +30,7 @@ echo  branch: %BRANCH_NAME%
 REM ===== 设置输出目录：如 main_Release、test_Release =====
 set OUTPUT_DIR=D:\project\Test-jenkins\Test_jenkins\%BRANCH_NAME%_Release
 set BUILD_DIR=%OUTPUT_DIR%
+set ZIP_DIR=D:\project\Test-jenkins\Test_jenkins\%BRANCH_NAME%_Release_back
 
 :: ===============================
 :: 1. 生成 version.h（必须在最前）
@@ -80,6 +81,10 @@ echo Deploying Qt dependencies to %OUTPUT_DIR%...
 "%QT_BIN%\windeployqt.exe" "%BUILD_DIR%\%EXE_NAME%" "%BUILD_DIR%\%EXE_TEST_NAME%"
 
 echo Build and deploy completed: %BUILD_DIR%
+
+echo 准备压缩：%ZIP_DIR%
+powershell -Command "Compress-Archive -Path '%BUILD_DIR%\*' -DestinationPath '%ZIP_DIR%\%EXE_NAME%-%BUILD_NUM%-%BUILD_TIME%'"
+
 pause >nul
 
 
