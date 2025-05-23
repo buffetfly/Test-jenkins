@@ -5,9 +5,9 @@
 #include "Login/LoginPresenterTest.h"
 
 #define RUN_TESTS
-#define QTEST_RUN_TEST(TestClass) { \
+#define QTEST_RUN_TEST(TestClass, argc, argv) { \
     TestClass tc; \
-    QTest::qExec(&tc); \
+    QTest::qExec(&tc, argc, argv); \
 }
 
 // 自动运行所有测试类的宏
@@ -22,7 +22,7 @@ int main(int argc, char* argv[])
     QTextCodec::setCodecForLocale(codec);
 
     // 运行所有测试类
-    QTEST_RUN_TEST(LoginPresenterTest)
+    QTEST_RUN_TEST(LoginPresenterTest, argc, argv)
         // 未来可以添加更多测试类
 // QTEST_RUN_TEST(AnotherTest)
 return 0;
