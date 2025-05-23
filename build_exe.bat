@@ -38,7 +38,7 @@ for /f %%i in ('git rev-list --count HEAD') do set BUILD_NUM=%%i
 
 :: 如果 Jenkins 提供环境变量，优先使用
 IF DEFINED GIT_COMMIT (
-    set BUILD_TIME="%GIT_COMMIT:~0,7%"
+    set BUILD_TIME=%GIT_COMMIT:~0,7%
 ) ELSE (
     for /f %%i in ('powershell -Command "Get-Date -Format yyyyMMddHHmm"') do set BUILD_TIME=%%i
 )
@@ -47,7 +47,7 @@ set VERSION_H=D:\project\Test-jenkins\Test_jenkins\Test_jenkins\version.h
 echo #define FILE_VER_MAJOR 1 > %VERSION_H%
 echo #define FILE_VER_MINOR 0 >> %VERSION_H%
 echo #define FILE_VER_PATCH %BUILD_NUM% >> %VERSION_H%
-echo #define BUILD_NUM %BUILD_TIME% >> %VERSION_H%
+echo #define BUILD_NUM "%BUILD_TIME%" >> %VERSION_H%
 echo #define FILE_VER_STR "%BUILD_NUM%" >> %VERSION_H%
 echo #define PRODUCT_VER_STR "%BUILD_NUM%-%BUILD_TIME%" >> %VERSION_H%
 echo #define FILE_DESC "Test_jenkins %BRANCH_NAME%执行文件" >> %VERSION_H%
